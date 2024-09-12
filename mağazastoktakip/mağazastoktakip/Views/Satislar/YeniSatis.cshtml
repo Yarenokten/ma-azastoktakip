@@ -1,0 +1,28 @@
+﻿@model mağazastoktakip.Models.Entity.TBLSatislar
+
+@{
+    ViewBag.Title = "YeniSatis";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <h2>YENİ SATIŞ PANELİ</h2>
+    <br />
+    <label>ÜRÜN ADI</label>
+    @Html.DropDownListFor(x => x.TBLUrunler.id, (List<SelectListItem>)ViewBag.drop1, new { @class = "form-control" })
+
+    <br />
+    <label>PERSONEL ADI</label>
+    @Html.DropDownListFor(x => x.TBLPersonel.id, (List<SelectListItem>)ViewBag.drop2, new { @class = "form-control" })
+
+    <br />
+    <label>MÜŞTERİ ADI</label>
+    @Html.DropDownListFor(x => x.TBLMusteri.id, (List<SelectListItem>)ViewBag.drop3, new { @class = "form-control" })
+
+    <br />
+    <label>SATIŞ FİYATI</label>
+    @Html.TextBoxFor(x => x.fiyat, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-success">SATIŞ EKLE</button>
+</form>
+

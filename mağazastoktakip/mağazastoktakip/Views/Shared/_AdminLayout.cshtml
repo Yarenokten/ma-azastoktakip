@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <style>
+        .navbar {
+            background-color: #83B9B6;
+            ; /* Siyah arka plan */
+            border-color: #000; /* Sınır rengi de siyah */
+        }
+
+            .navbar .navbar-brand,
+            .navbar .nav > li > a {
+                color: #fff; /* Yazı rengi beyaz */
+            }
+
+                .navbar .nav > li > a:hover {
+                    background-color: #333; /* Üzerine gelindiğinde daha koyu bir gri */
+                    color: #fff;
+                }
+    </style>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">STOK TAKİP MERKEZİ</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a  href="/Urun/Index">ÜRÜNLER</a></li>
+                <li><a href="/Musteri/Index">MÜŞTERİLER</a></li>
+                <li><a href="/Kategori/Index">KATEGORİLER</a></li>
+                <li><a href="/Satislar/Index">SATIŞLAR</a></li>
+                <li><a href="#">YARDIM</a></li>
+                <li><a href="/Admin/Index">ADMİN</a></li>
+                <li><a href="#">ÇIKIŞ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

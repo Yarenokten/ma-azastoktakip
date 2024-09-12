@@ -1,0 +1,34 @@
+﻿@model mağazastoktakip.Models.Entity.TBLMusteri
+@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <br />
+    <label> AD</label>
+    @Html.TextBoxFor(x => x.ad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ad, "", new { @class="text-danger" })
+    <br />
+    <label>SOYAD</label>
+    @Html.TextBoxFor(x => x.soyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.soyad, "", new { @class = "text-danger" })
+
+    <br />
+    <label>ŞEHİR</label>
+    @Html.TextBoxFor(x => x.şehir, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.şehir, "", new { @class = "text-danger" })
+
+    <br />
+    <label>BAKİYE</label>
+    @Html.TextBoxFor(x => x.bakiye, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.bakiye, "", new { @class = "text-danger" })
+
+    <br />
+
+
+
+    <button type="submit" class="btn btn-warning">MÜŞTERİ EKLE</button>
+
+</form>
+

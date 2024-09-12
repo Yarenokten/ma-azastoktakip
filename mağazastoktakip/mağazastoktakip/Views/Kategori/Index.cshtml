@@ -1,0 +1,27 @@
+﻿@using mağazastoktakip.Models.Entity
+@model List<TBLKategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th> ID </th>
+        <th>KATEGORİ ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.id</td>
+                    <td>@x.ad</td>
+                    <td><a href="/Kategori/sil/@x.id" class="btn btn-danger">sil</a></td>
+                    <td><a href="/Kategori/KategoriGetir/@x.id" class="btn btn-info">güncelle</a></td>
+                </tr>
+            }
+
+</table>
+<a href="/Kategori/yenikategori/" class="btn btn-primary">yeni kategori kaydı</a>
+

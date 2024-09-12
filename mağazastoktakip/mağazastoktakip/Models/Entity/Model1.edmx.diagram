@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7a18042a0e8b4f4eb18b008b22ac7475" Name="Diagram1">
+        <EntityTypeShape EntityType="DBMvcStokModel.TBLKategori" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMvcStokModel.TBLMusteri" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMvcStokModel.TBLPersonel" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMvcStokModel.TBLSatislar" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMvcStokModel.TBLUrunler" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DBMvcStokModel.FK_TBLUrunler_TBLKategori" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMvcStokModel.FK_TBLSatislar_TBLMusteri" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMvcStokModel.FK_TBLSatislar_TBLPersonel" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMvcStokModel.FK_TBLSatislar_TBLUrunler" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBMvcStokModel.TBLAdmin" Width="1.5" PointX="7.875" PointY="4.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

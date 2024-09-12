@@ -1,0 +1,31 @@
+﻿@model mağazastoktakip.Models.Entity.TBLUrunler
+
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{
+    <h2>Ürün güncelle</h2>
+    @Html.HiddenFor(x => x.id, new { @class = "form-control" })
+    <br />
+
+    @Html.TextBoxFor(x => x.ad, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.marka, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.stok, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.alisfiyat, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.satisfiyat, new { @class = "form-control" })
+    <br />
+    @Html.DropDownListFor(x => x.TBLKategori.id, (List<SelectListItem>)ViewBag.dropurun, new { @class = "form-control" })
+
+    <br />
+
+    <div style="margin-top:10px">
+        <button type="submit" class="btn btn-primary">Kategoriyi güncelle</button>
+    </div>
+}

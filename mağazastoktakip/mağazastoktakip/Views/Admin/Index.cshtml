@@ -1,0 +1,89 @@
+﻿@using mağazastoktakip.Models.Entity
+@model List<TBLAdmin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="table-title" style="color:forestgreen;font-weight:bold; font-size:30px">MEVCUT ADMİN LİSTESİ</h1>
+<table class="custom-table-bordered">
+    <tr>
+        <th style="color:black;font-weight:bold; font-size:20px">ADMİNLER</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td class="hidden-id" style="color:black;font-weight:bold; font-size:17px">@x.id</td>
+            <td class="admin-username" style="color:black;font-weight:bold; font-size:17px">@x.kullanici</td>
+        </tr>
+    }
+</table>
+<br />
+<!-- Buton modal'ı açar -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Yeni Admin Tanımla
+</button>
+
+<!-- Modal HTML Kodu -->
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Admin Ekleme Paneli</h2>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form method="post" action="/Admin/YeniAdmin">
+                <div class="modal-body">
+                    <label>Kullanıcı Adı</label>
+                    <input type="text" name="kullanici" class="form-control" required />
+                    <br />
+                    <label>Şifre</label>
+                    <input type="password" name="sifre" class="form-control" required />
+                    <br />
+                    <button type="submit" class="btn btn-info">Kaydet</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Vazgeç</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .table-title {
+        text-align: center; /* Başlığı ortalar */
+        font-size: 24px; /* Başlık yazı boyutunu artırır */
+        margin-bottom: 20px; /* Tablo ile başlık arasına boşluk ekler */
+    }
+
+    .custom-table-bordered {
+        width: 100%; /* Tabloyu kapsayıcı öğenin genişliğine göre ayarlar */
+        border-collapse: collapse; /* Kenarlıkları birleştirir */
+    }
+
+        .custom-table-bordered th,
+        .custom-table-bordered td {
+            padding: 15px; /* Hücrelerin iç boşluğunu artırır */
+            border: 1px solid #ddd; /* Hücre kenarlıkları */
+            text-align: center; /* Metni ortalar */
+            vertical-align: middle; /* Düşey hizalamayı ortalar */
+        }
+
+    .hidden-id {
+        display: none;
+    }
+
+    .admin-username {
+        border: 2px solid #333; /* Kare kenarlık */
+        padding: 10px; /* İç boşluk */
+        display: flex; /* Flexbox ile hizalar */
+        align-items: center; /* Yatayda ortalar */
+        justify-content: center; /* Düşeyde ortalar */
+        border-radius: 0; /* Köşeleri keskin */
+        font-weight: bold; /* Yazıyı kalın yapar */
+        min-width: 100px; /* Minimum genişlik belirler */
+        min-height: 50px; /* Minimum yükseklik belirler */
+    }
+</style>
+
+

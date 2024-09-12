@@ -1,0 +1,97 @@
+﻿@using mağazastoktakip.Models.Entity
+@model List<TBLAdmin>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+   
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Art Sign Up Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates,
+		Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+   
+    <link href="~/weblogin/css/style.css" rel="stylesheet" type="text/css" />
+  
+    <link href="~/weblogin/css/fontawesome-all.css" rel="stylesheet" />
+   
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+   
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class=" w3l-login-form">
+        <h2>GİRİŞ YAP</h2>
+        @using (Html.BeginForm("Giris", "Giris", FormMethod.Post))
+        {
+            <div class=" w3l-form-group">
+                <label>Kullanıcı Adı:</label>
+                <div class="group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="form-control" placeholder="Kullanıcı adı" required="required" name="kullanici" />
+                </div>
+            </div>
+            <div class=" w3l-form-group">
+                <label>Şifre:</label>
+                <div class="group">
+                    <i class="fas fa-unlock"></i>
+                    <input type="password" class="form-control" placeholder="Şifre" required="required" name="sifre" />
+                </div>
+            </div>
+
+            <div class="forgot">
+                <!-- Şifre sıfırlama popup'ı açan link -->
+                <a href="javascript:void(0)" onclick="openPopup()">Şifreni mi Unuttun?</a>
+                <p><input type="checkbox">Beni Hatırla</p>
+            </div>
+            <button type="submit">GİRİŞ YAP</button>
+        }
+
+        <p class=" w3l-register-p">Hesabınız yok mu ?<a href="#" class="register"> KAYDOL</a></p>
+    </div>
+
+   
+    <script>
+        function openPopup() {
+            var popupWindow = window.open("", "Şifre Sıfırlama", "width=400,height=400");
+            popupWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Yeni Şifre Belirleyin</title>
+                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+                    </head>
+                    <body>
+                        <div class="container">
+                            <h2 class="my-4">Yeni Şifre Belirleyin</h2>
+                            <form method="post" action="/Giris/Giris">
+                                <div class="form-group">
+                                    <label>Yeni Şifre</label>
+                                    <input type="password" name="newPassword" class="form-control" placeholder="Yeni şifre" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Yeni Şifreyi Tekrar Girin</label>
+                                    <input type="password" name="confirmPassword" class="form-control" placeholder="Yeni şifreyi tekrar girin" required />
+                                </div>
+                                <button type="submit" class="btn btn-info">Kaydet</button>
+
+                                <button type="button" class="btn btn-danger" onclick="window.close()">Vazgeç</button>
+                            </form>
+                        </div>
+                    </body>
+                </html>
+            `);
+  
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+﻿@model mağazastoktakip.Models.Entity.TBLKategori
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    <h2>kategori güncelle</h2>
+    @Html.HiddenFor(x=>x.id,new {@class="form-control"})
+    <br /> 
+    @Html.TextBoxFor(x=>x.ad,new  { @class="form-control"})
+    <div style="margin-top:10px">
+        <button type="submit" class="btn btn-primary">Kategoriyi güncelle</button>
+    </div>
+}

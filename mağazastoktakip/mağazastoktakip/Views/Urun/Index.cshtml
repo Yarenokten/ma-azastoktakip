@@ -1,0 +1,42 @@
+﻿@using mağazastoktakip.Models.Entity
+@model List<TBLUrunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("Index", "Urun", FormMethod.Get))
+            {
+                <p>
+                    ÜRÜN ADI : @Html.TextBox("p");
+                    <input type="submit" value=" ARA "/>
+                </p>
+            }
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>ÜRÜN ADI</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>ALIŞ FİYAT</th>
+        <th>SATIŞ FİYAT</th>
+        <th>KATEGORİ</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td>@x.id</td>
+            <td>@x.ad</td>
+            <td>@x.marka</td>
+            <td>@x.stok</td>
+            <td>@x.alisfiyat</td>
+            <td>@x.satisfiyat</td>
+            <td>@x.TBLKategori.ad</td>
+            <td><a href="/Urun/UrunSil/@x.id" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Urun/UrunGetir/@x.id" class="btn btn-info">GÜNCELLE</a></td>
+        </tr>
+    }
+</table>
+<a href="/Urun/YeniUrun/" class="btn btn-primary">YENİ ÜRÜN KAYDI</a>
